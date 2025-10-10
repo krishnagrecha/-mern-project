@@ -129,7 +129,6 @@ const Footer = () => {
         <p className="text-gray-500  tracking-tighter text-sm text-center">
             © 2025, krishnagrecha . All Rights Reserved.
         </p>
-
       </div>
     </footer>
   );
