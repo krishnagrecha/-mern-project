@@ -1,14 +1,17 @@
 import React from 'react';
 import Hero from '../components/Layout/Hero';
+import GenderCollectionSection from '../components/Products/GenderCollectionSection';
+import NewArrivals from '../components/Products/NewArrivals';
 
-// Correct: Component name starts with a capital letter
 const Home = () => {
   return (
     <div>
         <Hero/>
+        <GenderCollectionSection/>
+        <NewArrivals/>
     </div>
+
   );
 };
 
-// Correct: Export the capitalized component
 export default Home;
