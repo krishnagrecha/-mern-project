@@ -119,12 +119,7 @@ const NewArrivals = () => {
       setCanScrollRight(rightScrollable);
     }
     // scrollLeft:1960, clientWidth: 1280
-    console.log({
-      scrollLeft: container.scrollLeft,
-      clientWidth: container.clientWidth,
-      scrollWidth: container.scrollWidth,
-      offsetLeft: scrollRef.current.offsetLeft,
-    });
+
   };
 
   useEffect(() => {
