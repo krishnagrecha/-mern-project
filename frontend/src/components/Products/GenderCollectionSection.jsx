@@ -8,7 +8,7 @@ const GenderCollectionSection = () => {
     <section className="py-16 px-4 lg:px-0">
       <div className="container mx-auto flex flex-col md:flex-row gap-8">
         {/* Womens Collection  */}
-        <div className="relative flex-1">
+        <div className="relative flex-1 transform transition-transform duration-300 hover:scale-105">
           <img
             src={womensCollectionImage}
             alt="Women's Collection"
@@ -26,7 +26,7 @@ const GenderCollectionSection = () => {
           </div>
           </div>
             {/* Men's Collection  */}
-            <div className="relative flex-1">
+            <div className="relative flex-1 transform transition-transform duration-300 hover:scale-105">
           <img
             src={mensCollectionImage}
             alt="Men's Collection"
