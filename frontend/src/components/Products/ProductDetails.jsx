@@ -143,7 +143,7 @@ const ProductDetails = () => {
                   <button
                     key={color}
                     onClick={() => setSelectedColor(color)}
-                    className={`w-8 h-8 rounded-full border cursor-pointer ${
+                    className={`w-8 h-8 rounded-full border-blue-500 cursor-pointer ${
                       selectedColor === color
                         ? "border-4 border-black"
                         : "border-gray-300"
