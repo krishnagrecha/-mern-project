@@ -102,7 +102,7 @@ const CollectionPage = () => {
       <div
         ref={sidebarRef}
         
-        className={`fixed top-0 left-0 z-40 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 z-40 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 overflow-y-auto ${
           isSideBarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:static lg:translate-x-0 lg:shadow-none lg:w-1/4 xl:w-1/5 `}
       >
