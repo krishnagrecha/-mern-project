@@ -21,6 +21,10 @@ import AdminHomePage from "./pages/AdminHomePage";
 
 // Import Common Components
 import ScrollToTop from "./components/Common/ScrollToTop";
+import UserManageMent from "./components/Admin/UserManageMent";
+import ProductManagement from "./components/Admin/ProductManagement";
+import EditProductPage from "./components/Admin/EditProductPage";
+import OrderManagement from "./components/Admin/OrderManagement";
 
 const App = () => {
   return (
@@ -45,6 +49,10 @@ const App = () => {
         
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminHomePage />} />
+          <Route path="users" element={<UserManageMent />} />
+          <Route path="products" element={<ProductManagement />} />
+          <Route path="products/:id/edit" element={<EditProductPage />} />
+          <Route path="orders" element={<OrderManagement />} />
           
         </Route>
       </Routes>
