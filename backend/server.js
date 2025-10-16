@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv =require("dotenv");
 const connectDB=require("./config/db");
 const userRoutes = require("./routes/userRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 const productRoutes = require("./routes/productRoutes");
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 //API ROUTES
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
 
 
 app.listen(PORT, () => {
