@@ -11,6 +11,8 @@ const router = express.Router();
 router.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
+  //Registration logic
+
   try {
     let user = await User.findOne({ email });
     if (user) {
@@ -23,12 +25,17 @@ router.post("/register", async (req, res) => {
     //Create JWT payload
     const payload = { user: { id: user._id, role: user.role } };
 
+    //Sign and return token along with user data
+
     jwt.sign(
       payload,
       process.env.JWT_SECRET,
       { expiresIn: "40h" },
       (err, token) => {
         if (err) throw err;
+
+    //Send the user and token in response
+
         res.status(201).json({
           user: {
             _id: user._id,
@@ -65,12 +72,17 @@ router.post("/login", async (req, res) => {
 
     const payload = { user: { id: user._id, role: user.role } };
 
+    //Sign and return token along with user data
+
     jwt.sign(
       payload,
       process.env.JWT_SECRET,
       { expiresIn: "40h" },
       (err, token) => {
         if (err) throw err;
+
+    //Send the user and token in response
+
         res.json({
           user: {
             _id: user._id,
