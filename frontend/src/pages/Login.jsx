@@ -1,14 +1,18 @@
 import React, { use, useState } from "react";
 import { Link } from "react-router-dom";
 import login from "../assets/login.webp";
+import { loginUser } from "../redux/slices/authSlice";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit = (e) =>{
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("User Registered: ", {email, password})
-  }
+    dispatch(loginUser({ email, password }));
+  };
 
   return (
     <div className="flex">
@@ -54,7 +58,7 @@ const Login = () => {
             Sign In
           </button>
           <p className="mt-6 text-center text-sm">
-            Don't have an account? {" "}
+            Don't have an account?{" "}
             <Link to="/register" className="text-blue-500">
               Register
             </Link>
