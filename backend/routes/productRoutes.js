@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const express = require("express");
 const Product = require("../models/Product");
 const { protect, admin } = require("../middleware/authMiddleware");
@@ -186,10 +187,10 @@ router.get("/", async (req, res) => {
       query.brand = { $in: brand.split(",") };
     }
     if (size) {
-      query.size = { $in: size.split(",") };
+      query.sizes = { $in: size.split(",") };
     }
     if (color) {
-      query.color = { $in: color };
+      query.colors = color;
     }
     if (gender) {
       query.gender = gender;
