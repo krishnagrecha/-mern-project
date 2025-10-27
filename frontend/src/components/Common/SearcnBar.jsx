@@ -1,21 +1,27 @@
-import React from "react";
 import { useState } from "react";
 import { HiMagnifyingGlass, HiMiniXMark } from "react-icons/hi2";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setFilters, fetchProductsByFilters } from "../../redux/slices/productSlice";
 
-const SearcnBar = () => {
+
+const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSearchToggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log("Search Term: ", searchTerm);
-    setIsOpen(false);
-  };
-
+ const handleSearch = (e) => {
+  e.preventDefault();
+  dispatch(setFilters({ search: searchTerm }));
+  dispatch(fetchProductsByFilters({ search: searchTerm }));
+  navigate(`/collections/all?search=${encodeURIComponent(searchTerm)}`);
+  setIsOpen(false);
+};
   return (
     <div
       className={`flex items-center justify-center w-full transition-all duration-300 ${
@@ -64,4 +70,4 @@ const SearcnBar = () => {
   );
 };
 
-export default SearcnBar;
+export default SearchBar;

@@ -82,9 +82,8 @@ const authSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
-        // NOTE: The video has a bug here, setting state.error instead of state.user.
-        // This is the code shown *at this point* in the video.
-        state.error = action.payload;
+        
+        state.user = action.payload;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
@@ -96,9 +95,7 @@ const authSlice = createSlice({
       })
       .addCase(registerUser.fulfilled, (state, action) => {
         state.loading = false;
-        // NOTE: The video has a bug here, setting state.error instead of state.user.
-        // This is the code shown *at this point* in the video.
-        state.error = action.payload;
+        state.user = action.payload;
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.loading = false;
