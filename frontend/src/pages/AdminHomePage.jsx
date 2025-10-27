@@ -1,18 +1,22 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const AdminHomePage = () => {
-  // This data is not used yet, but that's okay.
-  const orders = [
-    {
-      _id: 123123,
-      user: {
-        name: "John Doe",
-      },
-      totalPrice: 110,
-      status: "Processing",
-    },
-    
-  ];
+  const dispatch = useDispatch();
+  const {
+    products,
+    loading: productsLoading,
+    error: productsError,
+  } = useSelector((state) => state.adminProducts);
+  const {
+    orders,
+    totalOrders,
+    totalSales,
+    loading: ordersLoading,
+    error: ordersError,
+  } = useSelector((state) => state.adminOrders);
+
+  
 
   return (
     <div className="max-w-7xl mx-auto p-6">
